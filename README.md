@@ -51,14 +51,14 @@ Detta prov kräver ingen ansluten hårdvara till 8266. Förutsättning är att m
 och “Value Name 1” =”uptime. Spara med “Submit”.
 2. Under ”Devices” “Task”=2 (Edit) Välj ”Device”=” System Info”. Välj sen ”Name” =”rssi”, Delay”=”60”, “IDX”=2, “Indicator”=”Wifi
 RSSI” och “Value Name 1” =”rssi. Spara med “Submit”.
-3. Under ”ToolsàAdvanced” sätt ”Message Delay (ms)”till  15000. Spara med “Submit”.
+3. Under ”Tools-Advanced” sätt ”Message Delay (ms)”till  15000. Spara med “Submit”.
 4. Under ”Config” gör följande val: ”Protocol”=”ThingSpeak”,
 ”Locate Controller”=”Use Hostname”, ”Controller Hostname”=” api.thingspeak.com”. Spara
 data med ”Submit”.
 5. Loggain/Skapa konto hos ThingSpeak. Följ instruktioner för att skapa en ”Channel”. 
 Under ”Channel Settings” se till att ”Field” 1 och 2 är markerade.
-När allt är klart kopiera nyckeln ”Write API Key” under ”Channelsà API Keys”.
-6. Gå tillbaks till ESPeasy. Kopiera in nyckeln under ”ConfigàController Password:” Raden under ”Sensor Delay” anger hur ofta data skickas till ThingSpeak”. Sätt ej
+När allt är klart kopiera nyckeln ”Write API Key” under ”Channels-API Keys”.
+6. Gå tillbaks till ESPeasy. Kopiera in nyckeln under ”Config-Controller Password:” Raden under ”Sensor Delay” anger hur ofta data skickas till ThingSpeak”. Sätt ej
 snabbare än 15 sek. För denna test är 60 sek lagom. Spara med ”Submit”.
 7. Om allt nu fungerar så ska data fyllas på i field 1 och 2 på Thingspeak en gång varje minut. Aktuella mätdata kan också ses till höger under ”Values” i menyn ”Devices”.  OBS att denna sida måste uppdateras manuellt.
 
