@@ -1,68 +1,35 @@
 # ESPeasy för Onsdagsklubben
-20180106
+20190715
 
-ESPeasy beskrivs här: 
-https://www.letscontrolit.com/wiki/index.php/ESPEasy.
+1.	Inledning
+EspEasy är en programvara, nästan som ett  ”operativsystem”, för ESP8266. Efter att programmet installerats  sker kommunikationen med EspEasy via web-gränsyta. Det är inga ytterliggare programvaror som ska kompileras. Via EspEasy kan man mäta med anslutna sensorer och styra/mäta via IO-pinnarna på ESP8266. Via mindre textbaserade script kan man programera logiska funktioner användbart t ex för hemautomatisering. EspEasy kan också leverara data till andra Smarta hem program som Domoticz eller MQTT. Det går också bra att trigga IFTTT händelser via anrop till maker.ifttt.com. Data kan också skickas till thingspeak för grafisk presentation. Har man flera moduler med EspEasy på så kan modulerna på ett enkelt sätt kommunisera med varandra för utökad funktionallitet. Det är omöjligt att på ett enkelt sätt lista allt som EspEasy kan göra. Se vidare i användardokumentationen som finns här: https://espeasy.readthedocs.io/en/latest/.
 
-Här är en sammanfattning av de viktigaste stegen.
+Man behöver inte kunna programera för att använda EspEasy. All initial uppsättning görs via webgränsytor. 
+En Wiki-sida med mer kompletterande info finns också: https://www.letscontrolit.com/wiki/index.php/ESPEasy#Introduction
 
-1. Ladda ner källkoden (http://www.letscontrolit.com/downloads/ESPEasy_R120.zip) som ska laddas ner i 8266 kortet. 
-En förutgåva av ESPeasy 2.0 finns också att prova (https://github.com/letscontrolit/ESPEasy/releases). 
-Packa upp filerna till valfri katalog.
-2. Anslut ett 8266-kort till datorn och dubbelklicka på filen flash. 
-(lista över kort som stöds https://www.letscontrolit.com/wiki/index.php/ESP_Hardware)
-Svara på ett par frågor (portnummer, 4096 & 120 ) och ESPeasy laddas till kortet. (tar ca 1 min)
-3. Kortet blir en Wifi accesspunkt  med namnet ”ESP…”. 
-Anslut till ”ESP..” nätet med mobiltelefon/padda. Lösenordet är  ’configesp’. 
-Surfa in på 192.168.4.1. 
-**OBS viktigt att surfa in till adressen. Om man använder den automatiska vidarekopplingen till startmenyn så kommer man
-inte att hinna se processorns nya ip adress.** 
-Tillgängliga Wifi nät som kortet kan se listas. Välj nät och ange lösenord. A
-vvakta medans kortet loggar in på nätet
-(20sek). Kortets nya IP adress visas sen i fönstret.
-4. Kortet som nu är en ESPeasy webserver presenterar ESPeasy menyer för konfigurering av systemet.
-5. Nu är det bara att ansluta hårdvara koppla och konfigurera. 
-Tillbehör som stöds finns här https://www.letscontrolit.com/wiki/index.php/Devices
+2.	Installation av EspEasy (Instruktion för Windows)
+EspEasy kan installeras på i princip alla ESP8266 baserade kretskort med serieport. Allt man behöver finns här: https://github.com/letscontrolit/ESPEasy/releases
+a)	Välj att ladda ner den senaste utgåvan. Följ länken med namn ”Release mega-2019xxxx” och ladda ner zip-filen (ca 35 MB). Packa upp zipfilen i valfri katalog.
+b)	Katalogen innehåller ett flertal filer men just nu är bara två stycken av intresse:
+1) FlashESP8266.exe och 2) ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.bin
+c)	Anslut ESP modulen till valfri USB port med lämplig datakabel.
+d)	Starta programmet FlashESP8266.exe. Programmet kommer att visa vilka comportar som finns att välja på. Har man bara en ESP-modul ansluten så väljer programmet automatsikt rätt port.
+e)	Vid ”Firmware” välj binärfilen ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.
+f)	Tryck Flash för att påbörja laddningen av EspEasy. Förloppet kan följas på skärmen. Överföringen tar nästan 2 minuter.
+g)	I detta läge kan man om man vill låta ett terminalprogram (t ex Putty) ansluta mot modulen på samma Comport som exe-filen använde. Inställning ska vara 115200 N 8 1.
+EspEasy kommer kontinuerligt att logga data på serieporten.
 
-Några viktiga saker att tänka på:
+3.	Aktivering
+Efter installation så behöver ESP8266 modulen ansluta sig till hemmanätverket. Det görs på följande sett:
+a)	Tryck reset och starta om modulen. Modulen kommer nu att agera Accesspunkt(AP) på ett Wifi- nät med namn ”ESP_Easy_0”. 
+b)	Anslut till ”ESP_Easy_0” med dator, padda mobil etc. Starta en webläsare och anslut till adress 192.168.4.1.
+c)	En lista visas med tillgängliga nätverk. Välj det nätverk som modulen ska arbeta på och ange även lösenord för nätverket.
+d)	Modulen kommer att starta om och ansluta till nätverket som angetts. Om allt går bra kommer modulen efter 20 sekunder att ange vilken ip-adress den har fått. Notera adressen.
+e)	Anslut nu dator, padda mobil etc till samma nät som modulen och ange ip-adressen som noterades ovan.
+f)	Ett användargränssnitt visas och EspEasy är nu klart att användas.
 
-* När man under devices anger sin hårdvara tänk på att:
-   * ”Enabled” ska kryssas i.
-   * ”Delay” är uppdateringstintervall. Om man ska skicka till ThingSpeak måste man ta det lugnt. 30 sek funkar.
-   * IDX nummer ska anges och vara unikt.
-   * Send to controller ska vara kryssat om data ska skickas vidare.
-   * Glöm inte att trycka på ”Submit” för att spara.
-* När data ska presenteras på display på raderna ”LineX:” är formatet följande ”[Name#Value Name] text”. Om man under devices har en DS18b20
-(termometer) med ”Name=TermDS18” och ”Value Namn=Temp” så kan man t ex skriva ”[TermDS18#Temp] °C”.
-* Om data ska skickas till ThingSpeak så måste: 
-   * ”Tools-Advanced-Message Delay” sättas till minst 15000 mS. 
-   * Under ”Controllers-Controllers Settings”
-      * ”Protocol”=”ThingSpeak”
-      * ”Locate Controller”=”Use Hostname”
-      * ”Controller Hostname”=” api.thingspeak.com”
-      * “Controller Password”= [Här anges den nyckel man får när man skapar en ”Channel” på ThingSpeak]
-* Under ”Tools” finns en funktion ”I2C Scan” som är bra att köra när man kopplat klart”. Den presenterar anslutna I2C enheter.
-
-## Enkel labb
-
-Detta prov kräver ingen ansluten hårdvara till 8266. Förutsättning är att man har laddat ESPeasy till en 8266 och anslutit den till sitt Wifi.
-
-1. Under ”Devices” “Task”=1 (Edit) Välj ”Device”=” System Info”. Välj sen ”Name” =”uptime”, Delay”=”60”, “IDX”=1, “Indicator”=”Uptime”
-och “Value Name 1” =”uptime. Spara med “Submit”.
-2. Under ”Devices” “Task”=2 (Edit) Välj ”Device”=” System Info”. Välj sen ”Name” =”rssi”, Delay”=”60”, “IDX”=2, “Indicator”=”Wifi
-RSSI” och “Value Name 1” =”rssi. Spara med “Submit”.
-3. Under ”Tools-Advanced” sätt ”Message Delay (ms)”till  15000. Spara med “Submit”.
-4. Under ”Config” gör följande val: ”Protocol”=”ThingSpeak”,
-”Locate Controller”=”Use Hostname”, ”Controller Hostname”=” api.thingspeak.com”. Spara
-data med ”Submit”.
-5. Loggain/Skapa konto hos ThingSpeak. Följ instruktioner för att skapa en ”Channel”. 
-Under ”Channel Settings” se till att ”Field” 1 och 2 är markerade.
-När allt är klart kopiera nyckeln ”Write API Key” under ”Channels-API Keys”.
-6. Gå tillbaks till ESPeasy. Kopiera in nyckeln under ”Config-Controller Password:” Raden under ”Sensor Delay” anger hur ofta data skickas till ThingSpeak”. Sätt ej
-snabbare än 15 sek. För denna test är 60 sek lagom. Spara med ”Submit”.
-7. Om allt nu fungerar så ska data fyllas på i field 1 och 2 på Thingspeak en gång varje minut. Aktuella mätdata kan också ses till höger under ”Values” i menyn ”Devices”.  OBS att denna sida måste uppdateras manuellt.
-
-
+4.	Användning
+Fortsättning följer.
 
 
 
