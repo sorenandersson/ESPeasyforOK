@@ -9,8 +9,7 @@ En Wiki-sida med mer kompletterande info finns också: https://www.letscontrolit
 
 2.	Installation av EspEasy (Instruktion för Windows)
 EspEasy kan installeras på i princip alla ESP8266 baserade kretskort med serieport. Allt man behöver finns här: https://github.com/letscontrolit/ESPEasy/releases
-* Välj att ladda ner den senaste utgåvan. Följ länken med namn ”Release mega-2019xxxx” och ladda ner zip-filen (ca 35 MB). Packa upp zipfilen i valfri katalog. Katalogen innehåller ett flertal filer men just nu är bara två stycken av intresse:
-1) FlashESP8266.exe och 2) ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.bin
+* Välj att ladda ner den senaste utgåvan. Följ länken med namn ”Release mega-2019xxxx” och ladda ner zip-filen (ca 35 MB). Packa upp zipfilen i valfri katalog. Katalogen innehåller ett flertal filer men just nu är bara två stycken av intresse, FlashESP8266.exe och ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.bin.
 * Anslut ESP modulen till valfri USB port med lämplig datakabel.
 * Starta programmet FlashESP8266.exe. Programmet kommer att visa vilka comportar som finns att välja på. Har man bara en ESP-modul ansluten så väljer programmet automatsikt rätt port.
 * Vid ”Firmware” välj binärfilen ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.
@@ -19,15 +18,15 @@ EspEasy kan installeras på i princip alla ESP8266 baserade kretskort med seriep
 
 3.	Aktivering
 Efter installation så behöver ESP8266 modulen ansluta sig till hemmanätverket. Det görs på följande sett:
-a)	Tryck reset och starta om modulen. Modulen kommer nu att agera Accesspunkt(AP) på ett Wifi- nät med namn ”ESP_Easy_0”. 
-b)	Anslut till ”ESP_Easy_0” med dator, padda mobil etc. Starta en webläsare och anslut till adress 192.168.4.1.
-c)	En lista visas med tillgängliga nätverk. Välj det nätverk som modulen ska arbeta på och ange även lösenord för nätverket.
-d)	Modulen kommer att starta om och ansluta till nätverket som angetts. Om allt går bra kommer modulen efter 20 sekunder att ange vilken ip-adress den har fått. Notera adressen.
-e)	Anslut nu dator, padda mobil etc till samma nät som modulen och ange ip-adressen som noterades ovan.
-f)	Ett användargränssnitt visas och EspEasy är nu klart att användas.
+* Tryck reset och starta om modulen. Modulen kommer nu att agera Accesspunkt(AP) på ett Wifi- nät med namn ”ESP_Easy_0”. 
+* Anslut till ”ESP_Easy_0” med dator, padda mobil etc. Starta en webläsare och anslut till adress 192.168.4.1.
+* En lista visas med tillgängliga nätverk. Välj det nätverk som modulen ska arbeta på och ange även lösenord för nätverket.
+* Modulen kommer att starta om och ansluta till nätverket som angetts. Om allt går bra kommer modulen efter 20 sekunder att ange vilken ip-adress den har fått. Notera adressen.
+* Anslut nu dator, padda mobil etc till samma nät som modulen och ange ip-adressen som noterades ovan.
+* Ett användargränssnitt visas och EspEasy är nu klart att användas.
 
 4.	Användning.
-Fortsättning följer.
+* (Fortsättning följer.)
 
 
 
