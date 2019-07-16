@@ -9,15 +9,13 @@ En Wiki-sida med mer kompletterande info finns också: https://www.letscontrolit
 
 2.	Installation av EspEasy (Instruktion för Windows)
 EspEasy kan installeras på i princip alla ESP8266 baserade kretskort med serieport. Allt man behöver finns här: https://github.com/letscontrolit/ESPEasy/releases
-a)	Välj att ladda ner den senaste utgåvan. Följ länken med namn ”Release mega-2019xxxx” och ladda ner zip-filen (ca 35 MB). Packa upp zipfilen i valfri katalog.
-b)	Katalogen innehåller ett flertal filer men just nu är bara två stycken av intresse:
+* Välj att ladda ner den senaste utgåvan. Följ länken med namn ”Release mega-2019xxxx” och ladda ner zip-filen (ca 35 MB). Packa upp zipfilen i valfri katalog. Katalogen innehåller ett flertal filer men just nu är bara två stycken av intresse:
 1) FlashESP8266.exe och 2) ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.bin
-c)	Anslut ESP modulen till valfri USB port med lämplig datakabel.
-d)	Starta programmet FlashESP8266.exe. Programmet kommer att visa vilka comportar som finns att välja på. Har man bara en ESP-modul ansluten så väljer programmet automatsikt rätt port.
-e)	Vid ”Firmware” välj binärfilen ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.
-f)	Tryck Flash för att påbörja laddningen av EspEasy. Förloppet kan följas på skärmen. Överföringen tar nästan 2 minuter.
-g)	I detta läge kan man om man vill låta ett terminalprogram (t ex Putty) ansluta mot modulen på samma Comport som exe-filen använde. Inställning ska vara 115200 N 8 1.
-EspEasy kommer kontinuerligt att logga data på serieporten.
+* Anslut ESP modulen till valfri USB port med lämplig datakabel.
+* Starta programmet FlashESP8266.exe. Programmet kommer att visa vilka comportar som finns att välja på. Har man bara en ESP-modul ansluten så väljer programmet automatsikt rätt port.
+* Vid ”Firmware” välj binärfilen ESP_Easy_mega-2019xxxx_normal_ESP8266_4M.
+* Tryck Flash för att påbörja laddningen av EspEasy. Förloppet kan följas på skärmen. Överföringen tar nästan 2 minuter.
+* I detta läge kan man om man vill låta ett terminalprogram (t ex Putty) ansluta mot modulen på samma Comport som exe-filen använde. Inställning ska vara 115200 N 8 1. EspEasy kommer kontinuerligt att logga data på serieporten.
 
 3.	Aktivering
 Efter installation så behöver ESP8266 modulen ansluta sig till hemmanätverket. Det görs på följande sett:
@@ -28,7 +26,7 @@ d)	Modulen kommer att starta om och ansluta till nätverket som angetts. Om allt
 e)	Anslut nu dator, padda mobil etc till samma nät som modulen och ange ip-adressen som noterades ovan.
 f)	Ett användargränssnitt visas och EspEasy är nu klart att användas.
 
-4.	Användning
+4.	Användning.
 Fortsättning följer.
 
 
